@@ -391,13 +391,14 @@ module.exports = function (api, threadModel, userModel, dashBoardModel, globalMo
                         if (isBannedOrOnlyAdmin(userData, threadData, senderID, threadID, isGroup, commandName, message, langCode))
                                 return;
                         if (!command) {
-                                // In noPrefix mode, only respond if the user explicitly used the prefix.
+                                // In noPrefix mode, only respond if the user explicitly used the 
+                                .
                                 // If the message had no prefix, silently ignore unrecognized words.
                                 if (!hasPrefix)
                                         return;
                                 if (!hideNotiMessage.commandNotFound) {
                                         if (!commandName) {
-                                                return await message.reply(`That's only the prefix. Type ${prefix}help to see commands.`);
+                                                return await message.reply(`— ℹ️ This is my prefix. Type ${prefix}help to see commands.`);
                                         }
                                         
                                         // Optimized command suggestion with caching and quick checks
