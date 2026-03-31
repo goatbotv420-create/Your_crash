@@ -18,11 +18,11 @@ module.exports = {
 		const categories = {};
 
 		const emojiMap = {
-			ai: "➥", "ai-image": "➥", group: "➥", system: "➥",
-			fun: "➥", owner: "➥", config: "➥", economy: "➥",
-			media: "➥", "18+": "➥", tools: "➥", utility: "➥",
-			info: "➥", image: "➥", game: "➥", admin: "➥",
-			rank: "➥", boxchat: "➥", others: "➥"
+			ai: "❯", "ai-image": "❯", group: "❯", system: "❯",
+			fun: "❯", owner: "❯", config: "❯", economy: "❯",
+			media: "❯", "18+": "❯", tools: "'", utility: "❯",
+			info: "❯", image: "❯", game: "❯", admin: "❯",
+			rank: "❯", boxchat: "❯", others: "❯"
 		};
 
 		const cleanCategoryName = (text) => {
@@ -75,29 +75,29 @@ module.exports = {
 
 			return message.reply(
 				`☠️ 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗜𝗡𝗙𝗢 ☠️\n\n` +
-				`➥ Name: ${name}\n` +
-				`➥ Category: ${category || "Uncategorized"}\n` +
-				`➥ Description: ${desc}\n` +
-				`➥ Aliases: ${aliases?.length ? aliases.join(", ") : "None"}\n` +
-				`➥ Usage: ${usage}\n` +
-				`➥ Permission: ${requiredRole}\n` + 
-				`➥ Author: ${author}\n` +
-				`➥ Version: ${version}`
+				`❯ Name: ${name}\n` +
+				`❯ Category: ${category || "Uncategorized"}\n` +
+				`❯ Description: ${desc}\n` +
+				`❯ Aliases: ${aliases?.length ? aliases.join(", ") : "None"}\n` +
+				`❯ Usage: ${usage}\n` +
+				`❯ Permission: ${requiredRole}\n` + 
+				`❯ Author: ${author}\n` +
+				`❯ Version: ${version}`
 			);
 		}
 
 		const formatCommands = (cmds) =>
 			cmds.sort().map((cmd) => `× ${cmd}`);
 
-		let msg = `━━━☠️ 𝗡𝗲𝗼𝗞𝗘𝗫 𝗔𝗜 ☠️━━━\n`;
+		let msg = `━━━☠️ 🆈🅾🆄🆁︎ 🅲🆁🅰🆂🅷 ☠️━━━\n`;
 		const sortedCategories = Object.keys(categories).sort();
 		for (const cat of sortedCategories) {
-			const emoji = emojiMap[cat] || "➥";
-			msg += `\n╭──『 ${cat.toUpperCase()} 』\n`; 
+			const emoji = emojiMap[cat] || "❯";
+			msg += `\n╭━━━⁌ ${cat.toUpperCase()} ⁍\n`; 
 			msg += `${formatCommands(categories[cat]).join(' ')}\n`; 
-			msg += `╰────────────◊\n`;
+			msg += `┗━━━━━━━━━━━━✦\n`;
 		}
-		msg += `\n➥ Use: ${prefix}help [command name] for details\n➥Use: ${prefix}callad to talk with bot admins '_'`;
+		msg += `\n❯ Use: ${prefix}help [command name] for details\n❯Use: ${prefix}callad to talk with bot admins'`;
 
 		return message.reply(msg);
 	}
